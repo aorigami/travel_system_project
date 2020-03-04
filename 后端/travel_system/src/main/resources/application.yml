@@ -1,0 +1,42 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: travel_system
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///products?characterEncoding=utf-8&useUnicode=true&serverTimezone=GMT&useSSL=false
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 180000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  redis:
+    host: 192.168.88.128
+  rabbitmq:
+    host: 192.168.88.128
+    virtual-host: /
+    username: guest
+    password: guest
+    template:
+      exchange: www.travel.exchange
+    publisher-confirms: true
+mybatis-plus:
+  type-aliases-package: com.travel.pojo
+  configuration:
+    map-underscore-to-camel-case: false  #关闭驼峰命名
+pagehelper:
+  helper-dialect: mysql
+  params: count=countSql
+  reasonable: true
+  support-methods-arguments: true
+#logging:
+#  level:
+#    com.travel.mapper.SyslogMapper: debug
