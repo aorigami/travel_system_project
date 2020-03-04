@@ -82,7 +82,7 @@ hosts目录：C:\Windows\System32\drivers\etc，注意！hosts没有后缀！
 ​    
     **图解**：
 
-![](F:\GitTest\travel_system_git\image\hosts1.png)
+![](https://github.com/Origami-An/travel_system_project.git/image/hosts1.png)
     ![](F:\GitTest\travel_system_git\image\hosts2.png)
 
 
