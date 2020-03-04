@@ -20,13 +20,13 @@
 
 ## 效果图
 
-![](F:\GitTest\travel_system_git\image\login.png)
+![](https://github.com/Origami-An/travel_system_project/blob/master/image/login.png)
 
-![](F:\GitTest\travel_system_git\image\main.png)
+![](https://github.com/Origami-An/travel_system_project/blob/master/image/main.png)
 
-![](F:\GitTest\travel_system_git\image\user.png)
+![](https://github.com/Origami-An/travel_system_project/blob/master/image/user.png)
 
-![](F:\GitTest\travel_system_git\image\order.png)
+![](https://github.com/Origami-An/travel_system_project/blob/master/image/order.png)
 
 
 
@@ -82,8 +82,8 @@ hosts目录：C:\Windows\System32\drivers\etc，注意！hosts没有后缀！
 ​    
     **图解**：
 
-![](F:\GitTest\travel_system_git\image\hosts1.png)
-    ![](F:\GitTest\travel_system_git\image\hosts2.png)
+![](https://github.com/Origami-An/travel_system_project/blob/master/image/hosts1.png)
+    ![](https://github.com/Origami-An/travel_system_project/blob/master/image/hosts2.png)
 
 
 
@@ -144,7 +144,7 @@ hosts目录：C:\Windows\System32\drivers\etc，注意！hosts没有后缀！
     live-server --port=9003
     ```
 
-    ![](F:\GitTest\travel_system_git\image\up.png)
+    ![](https://github.com/Origami-An/travel_system_project/blob/master/image/up.png)
 
     
 
