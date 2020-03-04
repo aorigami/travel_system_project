@@ -1,0 +1,112 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <title>数据 - AdminLTE2定制版 | Log in</title>
+
+    <link href="css/new.css" rel="stylesheet"></link>
+    <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet"></link>
+    <link href="plugins/ionicons/css/ionicons.min.css" rel="stylesheet"></link>
+    <link href="plugins/adminLTE/css/AdminLTE.css" rel="stylesheet"></link>
+    <link href="plugins/iCheck/square/blue.css" rel="stylesheet"></link>
+</head>
+
+<body class="hold-transition login-page">
+<div class="login-box" id="app">
+    <div class="login-logo">
+        <a href="all-admin-index.html"><b>旅游</b>后台管理系统</a>
+    </div>
+
+    <div class="login-box-body">
+        <p class="login-box-msg">登录系统</p>
+
+        <form @submit.prevent="login()">
+            <div class="form-group has-feedback">
+                <input type="text" v-model="username" name="username" class="form-control" placeholder="用户名">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" v-model="password" name="password" class="form-control" placeholder="密码">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label><input type="checkbox" id="ckeckbox" name="remeberMe"/>
+                            记住下次自动登录</label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+        <a href="#">忘记密码</a>
+        <!--<a href="/register" id="regTo">注册账号</a>-->
+    </div>
+</div>
+
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="plugins/iCheck/icheck.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+<script src="plugins/vue/axiosConf.js"></script>
+
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            username: "",
+            password: ""
+        },
+        created() {
+            axios.get("/user/getUsername").then(res => {
+                location.href = "pages/main.html";
+                alert("请注销后再登录哦~");
+            }).catch(error => {
+            })
+        },
+        methods: {
+            login() {
+                let params = new URLSearchParams();
+                params.append('username', this.username);
+                params.append('password', this.password);
+                params.append('remeberMe', $("#ckeckbox").is(":checked"));
+                axios.post("/user/login", params).then(res => {
+                    if (res.status == 202) {
+                        window.location.href = "pages/main.html";
+                    } else {
+                        alert("连接超时，请重新登录");
+                    }
+                }).catch(error => {
+                    if (error.response.status == 400) {
+                        alert("密码错误，请重新输入您的密码");
+                    } else if (error.response.status == 404) {
+                        alert("未知账户，请检查您的用户名是否正确");
+                    } else {
+                        alert("请检查您的账号密码是否正确");
+                    }
+                })
+            }
+        }
+    });
+</script>
+
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%'
+        });
+    });
+</script>
+<script></script>
+</body>
+
+</html>
