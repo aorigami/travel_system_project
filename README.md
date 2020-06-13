@@ -134,11 +134,13 @@ hosts目录：C:\Windows\System32\drivers\etc，注意！hosts没有后缀！
 
 3. #### 前端部署
 
-    前端环境我已经集成好了
-
     通过live server启动项目
 
     在idea最底下的工具栏Terminal命令窗口输入 ：
+    
+    ```
+    npm install -g live-server
+    ```
 
     ```
     live-server --port=9003
@@ -161,7 +163,7 @@ RabbiMQ和nginx，本人是放在linux上的。
 
 如果需要请自行修改后端工程的application.yml的对应信息！
 
-如果没有安装，请先安装在运行项目！
+如果没有安装，请先安装再运行项目！
 
 
 
