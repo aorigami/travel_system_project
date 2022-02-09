@@ -23,7 +23,7 @@
         <java.version>1.8</java.version>
         <mysql.version>8.0.16</mysql.version>
         <lombok.version>1.18.8</lombok.version>
-        <shiro.version>1.4.2</shiro.version>
+        <shiro.version>1.7.1</shiro.version>
         <mybatis.plus.version>3.3.1.tmp</mybatis.plus.version>
         <pageHelper.version>1.2.5</pageHelper.version>
         <commons.lang3.version>3.8.1</commons.lang3.version>
