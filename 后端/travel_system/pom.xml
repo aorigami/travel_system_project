@@ -27,7 +27,7 @@
         <mybatis.plus.version>3.3.1.tmp</mybatis.plus.version>
         <pageHelper.version>1.2.5</pageHelper.version>
         <commons.lang3.version>3.8.1</commons.lang3.version>
-        <fastjson.version>1.2.47</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
     </properties>
 
     <dependencies>
